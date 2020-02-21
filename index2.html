@@ -1,0 +1,45 @@
+<html>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="translator">
+  <h2>Choose a language, then enter your name</h2>
+  <button id="eng" v-on:click="ENtranslate">English</button>
+  <button id="hun" v-on:click="HUtranslate">Hungarian</button>
+  <input id="ff" v-model="name" v-bind:disabled="disabled" placeholder="Your name">
+  <p>{{ name }}</p>
+</div>
+
+<script>
+var vm = new Vue({
+  el: '#translator',
+  data: {
+    name: '' 
+  },
+    methods: {
+    ENtranslate: function () {
+      this.name = this.name.split(' ').reverse().join(' ')
+      document.getElementById("eng").disabled = true
+      document.getElementById("hun").disabled = false
+      document.getElementById("ff").disabled = false
+    },
+
+    HUtranslate: function(){
+       this.name = this.name.split(' ').reverse().join(' ')
+       document.getElementById("hun").disabled = true
+       document.getElementById("eng").disabled = false
+       document.getElementById("ff").disabled = false
+      },
+
+    disabled: function(){
+        document.getElementById("ff").disabled = true;
+      }
+  }
+  
+
+})
+</script>
+
+</body>
+</html>
