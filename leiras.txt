@@ -1,0 +1,1 @@
+Index.html-ben a név fel van bontva firstname és lastname-re, az index2-ben egyben van.
